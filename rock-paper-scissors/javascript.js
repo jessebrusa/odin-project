@@ -1,36 +1,12 @@
-const rpc = ['rock', 'paper', 'scissors']
-
-
-function getPlayerChoice() {
-    return prompt('Please Type Rock, Paper, Or Scissors: ').toLowerCase()
-}
-
+const rock = document.querySelector('.rock')
+const paper = document.querySelector('.paper')
+const scissors = document.querySelector('.scissors')
 
 function getComputerChoice() {
-    return rpc[Math.floor(Math.random() * (3 -0))]
+    return Math.floor(Math.random() * (3 -0))
 }
 
-
-function returnNumValues(string) {
-    if (string == 'rock') {
-        return 0
-    }
-    else if (string == 'paper') {
-        return 1
-    }
-    else {
-        return 2
-    }
-}
-
-
-function compareMoves(playerMove, computerMove) {
-    let playerValue = returnNumValues(playerMove)
-    compValue = returnNumValues(computerMove)
-
-    console.log(`Player Move: ${playerMove}`)
-    console.log(`Computer Move: ${computerMove}`)
-
+function compareMoves(playerValue, compValue) {
     if (compValue === playerValue) {
         return 'Its a Tie!'
     }
@@ -48,41 +24,21 @@ function compareMoves(playerMove, computerMove) {
     }
  }
 
-
-let playerScore = 0;
-computerScore = 0;
-gamesPlayed = 0
-
-while (gamesPlayed < 5) {
-
-    let playerMove = getPlayerChoice()
-    let computerMove = getComputerChoice()
-
-    let outcome = compareMoves(playerMove, computerMove)
-    console.log(outcome)
-
-    if (outcome === 'Player Wins!') {
-        playerScore += 1
-        gamesPlayed += 1
-    }
-    else if (outcome == 'Computer Wins') {
-        computerScore += 1
-        gamesPlayed += 1
-    }
-    else {
-        playerScore += 1
-        computerScore += 1
-        gamesPlayed += 1
-    }
+function playerRock() {
+    let compValue = getComputerChoice()
+    console.log(compareMoves(0, compValue))
 }
 
+function playerPaper() {
+    let compValue = getComputerChoice()
+    console.log(compareMoves(1, compValue))
+}
 
-if (playerScore > computerScore) {
-    console.log(`\nPlayer Wins ${playerScore}/5`)
+function playerScissor() {
+    let compValue = getComputerChoice()
+    console.log(compareMoves(2, compValue))
 }
-else if (computerScore > playerScore){
-    console.log(`\nComputer Wins ${computerScore}/5`)
-}
-else {
-    console.log("\nIt's A Tie!")
-}
+
+rock.addEventListener('click', playerRock)
+paper.addEventListener('click', playerPaper)
+scissors.addEventListener('click', playerScissor)
