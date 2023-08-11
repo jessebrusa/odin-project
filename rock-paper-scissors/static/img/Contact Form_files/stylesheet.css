@@ -1,0 +1,98 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+
+* {
+    border: 3px solid red
+}
+
+body {
+    background-color: #868B8E;
+    font-family: 'Roboto', sans-serif;
+}
+
+.header {
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    gap: 50px; 
+}
+
+.top-info {
+    width: 75%;
+    background-color: #E7D2CC;
+    text-align: center;
+    border-radius: 50px;
+    padding: 20px;
+}
+
+h1 {
+    font-size: 80px;
+}
+
+.img-location {
+    width: 35%;
+    height: 300px;
+    background-color: #E7D2CC;
+    text-align: center;
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.img-location > img {
+    padding: 10px;
+}
+
+.formContainer {
+    width: 65%;
+    min-width: 475px;
+    margin: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #EEEDE7;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.formLabels {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 10px;
+}
+
+.formInputs {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+label {
+    font-size: 28px;
+}
+
+.inputField {
+    min-width: 300px;
+
+    height: 30px;
+    font-size: 25px;
+}
+
+
+
+@media only screen and (max-width: 1200px) {
+    .inputField {
+        width: 50px;
+    }
+}
